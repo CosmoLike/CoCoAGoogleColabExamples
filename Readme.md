@@ -130,7 +130,7 @@ There are a few differences users should be aware of when running Cocoa on Googl
             from google.colab import drive
             drive.mount('/content/drive')
     
-      - **Step 2️⃣**: Compress and copy the `/content` folder from the local disk to the user's Google Drive
+      - **Step 2️⃣**: Compress and copy the `/content` folder from the local disk to the user's Drive
     
             %%bash
             ROOT="colab_name_notebook"
@@ -151,7 +151,7 @@ There are a few differences users should be aware of when running Cocoa on Googl
             from google.colab import drive
             drive.mount('/content/drive')
     
-      - **Step 2️⃣**: Copy the `/content` folder from the user's Google Drive to the local disk (set `ARCHIVE` to the appropriate checkpoint file)
+      - **Step 2️⃣**: Decompress and copy the `/content` folder from the user's Drive to the local disk (set `ARCHIVE` to the appropriate checkpoint file)
     
             %%bash
             SENTINEL="/content/conda/etc/profile.d/conda.sh"  # exists when your env is restored
