@@ -72,7 +72,7 @@ There are a few differences users should be aware of when running Cocoa on Googl
           cd ./cocoa/Cocoa/
           source compile_cocoa.sh
 
-    - **Cell 7️⃣**: Save CoCoA
+    - **Cell 7️⃣**: Save CoCoA on Drive (does not work with local runtime)
 
           %%bash
           DEST="/content/drive/MyDrive/ColabBackups"
@@ -89,14 +89,14 @@ There are a few differences users should be aware of when running Cocoa on Googl
             /content
           echo "Created: $ARCHIVE"
 
-  - Running Collab Notebook with CoCoA pre-installed (after first run)
+  - Running Collab Notebook with CoCoA pre-compiled, loaded from Drive (does not work with local runtime)
 
-    - **Cell :one:**: Connect the notebook to your Google Drive account (will be important later)
+    - **Cell :one:**: Connect the notebook to your Google Drive account
 
           from google.colab import drive
           drive.mount('/content/drive')
 
-    - **Cell 2️⃣**: Load CoCoA (pre-installed and pre-compiled)
+    - **Cell 2️⃣**: Load CoCoA from Drive
 
           %%bash
           DEST="/content/drive/MyDrive/ColabBackups"
