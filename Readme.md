@@ -121,4 +121,44 @@ There are a few differences users should be aware of when running Cocoa on Googl
 
 ## :interrobang: FAQ: How can users save checkpoints on Google Colab? <a name="overview_google_colab2"></a>
 
-  One of the biggest challenges in working with Google Colab is the  fact that the entire `/content` local drive is wiped when a Colab notebook is disconnected. Therefore, if users have not created checkpoints of their computation in their Google Drive accounts, they can lose up to 24 hours of computation (which can cost almost 10 dollars on the A100 node). That is why the examples we provide on the [CoCoAGoogleColabExamples](https://github.com/CosmoLike/CoCoAGoogleColabExamples) repository contain **checkpoints** blocks after every cell that 
+  One of the biggest challenges in working with Google Colab is the fact that the entire local drive is erased when a Colab notebook is disconnected. Not reserving time to copy the `/content` folder to the user's Google Drive, an expensive operation given the sheer amount of files inside `conda` and `cocoa` main folders, can then result in 24 hours of lost computation. That is why our examples contain several **checkpoint** blocks after every computationally intensive cell. 
+  
+  - How to create a checkpoint 
+
+      - **Step :one:**: Connect the notebook to your Google Drive account (will be important later)
+      
+            from google.colab import drive
+            drive.mount('/content/drive')
+    
+      - **Step 2️⃣**: Compress and copy the `/content` folder from the local disk to the user's Google Drive
+    
+            %%bash
+            ROOT="colab_name_notebook"
+            DEST="/content/drive/MyDrive/ColabBackups"
+            mkdir -p "$DEST"
+            ARCHIVE="$DEST/$ROOT_$(date +%F_%H-%M).tar.gz"
+            tar -czf "$ARCHIVE" \
+                --exclude='/content/drive' \
+                --exclude='**/__pycache__' \
+                --exclude='**/.ipynb_checkpoints' \
+                /content
+            echo "Created: $ARCHIVE"
+
+  - How to load a checkpoint 
+
+      - **Step :one:**: Connect the notebook to your Google Drive account (will be important later)
+      
+            from google.colab import drive
+            drive.mount('/content/drive')
+    
+      - **Step 2️⃣**: Copy the `/content` folder from the user's Google Drive to the local disk (set `ARCHIVE` to the appropriate checkpoint file)
+    
+            %%bash
+            SENTINEL="/content/conda/etc/profile.d/conda.sh"  # exists when your env is restored
+            if [[ -e "$SENTINEL" ]]; then
+              echo "Found $SENTINEL — environment already restored. Skipping untar."
+              exit 0
+            fi
+            ARCHIVE="CHECKPOINT_FILE"
+            test -f "$ARCHIVE"
+            tar -xzf "$ARCHIVE" -C /
