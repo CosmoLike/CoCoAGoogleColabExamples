@@ -121,7 +121,7 @@ There are a few differences users should be aware of when running Cocoa on Googl
 
 ## :interrobang: FAQ: How can users save checkpoints on Google Colab? <a name="overview_google_colab2"></a>
 
-  One of the biggest challenges in working with Google Colab is the fact that the entire local drive is erased when a Colab notebook is disconnected. Not reserving time to copy the `/content` folder to the user's Google Drive, an expensive operation given the sheer amount of files inside `conda` and `cocoa` main folders, can then result in 24 hours of lost computation. That is why our examples contain several **checkpoint** blocks after every computationally intensive cell. 
+  One of the biggest challenges in working with Google Colab is the fact that the entire local drive is erased when a Colab notebook is disconnected. Not reserving time to copy the `/content` folder to the user's Google Drive, an expensive operation given the sheer amount of files inside `conda` and `cocoa` main folders, can result in 24 hours of lost computation. That is why our examples contain several **checkpoint** blocks after every computationally intensive cell. 
   
   - How to create a checkpoint 
 
