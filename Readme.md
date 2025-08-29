@@ -123,9 +123,9 @@ There are a few differences users should be aware of when running Cocoa on Googl
 
   One of the biggest challenges in working with Google Colab is the fact that the entire local drive is erased when a notebook is disconnected. Not reserving time to copy the `/content` folder to the user's Google Drive, an expensive operation, can result in 24 hours of lost computation. To prevent such a catastrophe, our examples contain several blocks that create **checkpoints** after computationally intensive cells. 
   
-  - How to create a checkpoint 
+  - How to create a checkpoint? 
 
-      - **Step :one:**: Connect the notebook to your Google Drive account (will be important later)
+      - **Step :one:**: Connect the notebook to your Google Drive account
       
             from google.colab import drive
             drive.mount('/content/drive')
@@ -144,9 +144,9 @@ There are a few differences users should be aware of when running Cocoa on Googl
                 /content
             echo "Created: $ARCHIVE"
 
-  - How to load a checkpoint 
+  - How to load a checkpoint?
 
-      - **Step :one:**: Connect the notebook to your Google Drive account (will be important later)
+      - **Step :one:**: Connect the notebook to your Google Drive account
       
             from google.colab import drive
             drive.mount('/content/drive')
