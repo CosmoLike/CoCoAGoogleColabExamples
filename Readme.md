@@ -1,6 +1,6 @@
 # Google Colab Examples (CoCoA)
 
-This repository contains examples of how to use CoCoA, the [Cobaya-Cosmolike Joint Architecture](https://github.com/CosmoLike/cocoa), within Google Colab.
+This repository contains examples that show how to run CoCoA, the [Cobaya-Cosmolike Joint Architecture](https://github.com/CosmoLike/cocoa), within Google Colab.
 
 ## :interrobang: FAQ: How can users run Cocoa on Google Colab? <a name="overview_google_colab"></a>
 
