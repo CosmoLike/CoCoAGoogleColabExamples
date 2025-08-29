@@ -6,7 +6,7 @@ This repository contains examples that show how to run CoCoA, the [Cobaya-Cosmol
 
 [Google Colab](https://colab.research.google.com/) provides a convenient platform for users to run MCMCs, likelihood minimizations, and profiles, as long as Machine-Learning Emulators are used to compute the data vectors. In the repository [CoCoAGoogleColabExamples](https://github.com/CosmoLike/CoCoAGoogleColabExamples), we provide a few examples along with explanatory notes. 
 
-Installing Cocoa requires time and also strains our limited Git-LFS quota, which is especially relevant given that **the entire `/content` local drive is wiped when a Colab notebook is disconnected**. We provide instructions on how to save and load Cocoa right after the initial installation to avoid this problem. 
+Installing Cocoa requires time and also strains our limited Git-LFS quota, which is especially relevant given that **the entire local drive is wiped when a Colab notebook is disconnected**. We provide instructions on how to save and load Cocoa right after the initial installation to avoid this problem. 
 
 There are a few differences users should be aware of when running Cocoa on Google Colab.
 
